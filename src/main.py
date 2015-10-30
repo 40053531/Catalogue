@@ -17,11 +17,11 @@ queen_mab = ['Queen Mab','Lovers','25','Electric','-','-','Electric','-','Wind',
 slime = ['Slime','Chariot','2','Physical','-','-','-','Physical','Fire','img/Slime.jpg']
 angel = ['Angel','Justice','4','Wind','-','-','-','Wind,Light','Dark','img/Angel.jpg']
 forneus = ['Fourneus','Hermit','6','Ice','-','-','Dark','Ice','Electric','img/Forneus.jpg']
-fortuna = ['Fortuna','Fortune','35','Wind','-','-','Fire,Wind','-','img/Fortuna.jpg']
+fortuna = ['Fortuna','Fortune','35','Wind','-','-','Fire,Wind','-','-','img/Fortuna.jpg']
 sandman =['Sandman','Strength','5','Wind','-','-','-','Wind','Electric','img/Sandman.jpg']
 berith = ['Berith','Hanged Man','15','Physical','-','-','Fire','-','Wind','img/Berith.jpg']
 ghoul = ['Ghoul','Death','9','Ailment','-','-','Ice','-','Fire,Light','img/Ghoul.jpg']
-apsaras =['Apsaras','Temperance','Recovery','-','-','-','-','Fire','img/Apsaras.jpg']
+apsaras =['Apsaras','Temperance','4','Recovery','-','-','-','-','Fire','img/Apsaras.jpg']
 
 
 personas = []

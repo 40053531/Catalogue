@@ -5,9 +5,10 @@
       {% for p in personas %}
         <div class="col-lg-3 col-md-4 coll-xs-6 thumb"  style="background-color: #f5f5f5">
           <a class="thumbnail"  href="/persona/{{p['name']}}">
-            <div width="400" height="300" style="overflow:hidden">
+            <div width="400" height="300" style="overflow:hidden;
+            background-position:center center">
               <img src={{url_for('static',filename=p["img"])}} width=auto
-                 height="300">
+                 height="300" style="display:block; margin-right:auto; margin-left:auto">
             </div>
             <p>{{p["name"]}}</p>
           </a>
