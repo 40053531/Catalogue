@@ -2,14 +2,14 @@
 {% block content %}
   <div class="container">
     <div class="col-lg-12"><h1>List Test</h1></div>
-      {% for persona in personas %}
+      {% for p in personas %}
         <div class="col-lg-3 col-md-4 coll-xs-6 thumb"  style="background-color: #f5f5f5">
-          <a class="thumbnail"  href=#{{persona["name"]}}>
+          <a class="thumbnail"  href="/persona/{{p['name']}}">
             <div width="400" height="300" style="overflow:hidden">
-              <img src={{url_for('static',filename=persona["img"])}} width=auto
+              <img src={{url_for('static',filename=p["img"])}} width=auto
                  height="300">
             </div>
-            <p>{{persona["name"]}}</p>
+            <p>{{p["name"]}}</p>
           </a>
         </div>
       {% endfor %}
