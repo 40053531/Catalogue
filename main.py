@@ -50,7 +50,7 @@ def search():
         return p['name']
   return "not found"
 
-@app.route('/persona/<chara>/)
+@app.route('/persona/<chara>/')
 def persona(chara):
   for p in personas:
     if p['name'] == chara
