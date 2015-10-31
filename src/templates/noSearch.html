@@ -1,4 +1,21 @@
 {% extends "base.html" %}
 {% block content %}
-  <h1> Search Here</h1>
+  {% if search_term == null %}
+    <h1> Search Here</h1>
+  {% else %}
+    <h1> Search for {{ search_term }} found nothing, try again</h1>
+  {% endif %}
+  
+  <div class="row">
+    <form class="col-lg-6" role="search" action="/search/">
+      <div class="input-group">
+        <input type="text" class="form-control" placeholder="Search" name="q">
+        <span class="input-group-btn">
+          <button class="btn btn-default" type="submit" id="search-btn">
+            <i class="glyphicon glyphicon-search"></i>
+          </button>
+        </span>
+      </div>
+    </div>
+  </div>
 {% endblock %}

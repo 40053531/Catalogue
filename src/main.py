@@ -9,7 +9,7 @@ keys = ['name','arcana','startinglevel','inherits','reflects','absorbs','blocks'
 
 izanagi = ['Izanagi','Fool','1','Electric','-','-','Dark','Electric','Wind','img/Izanagi.jpg']
 pixie = ['Pixie','Magician','2','Ice','-','-','-','Wind','Fire','img/Pixie.jpg']
-saki_mitama =['Saki Mitama','Priestess','11','Recovery','-','-','-','Ice','Wind','img/Saki_Mitama.jpg']
+saki_mitama =['Saki Mitama','Priestess','11','Recovery','-','-','-','Ice','Wind','img/SakiMitama.png']
 senri = ['Senri','Empress','9','Recovery','-','-','Fire','-','Electric','img/Senri.jpg']
 oberon = ['Oberon','Emperor','12','Electric','-','-','Electric','Fire','Wind','img/Oberon.jpg']
 omoikane = ['Omoikane','Hierophant','7','Electric','-','-','-','Electric','Ice','img/Omoikane.jpg']
@@ -60,7 +60,7 @@ def search():
       if search_term in p['name']:
         results.append(dict(p))
     if results == []:
-      return('noSearch.html')
+      return render_template('noSearch.html',search_term=search_term)
     else:
       return render_template('search.html',results=results)
 
