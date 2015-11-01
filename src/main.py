@@ -1,45 +1,9 @@
 from flask import Flask, render_template, redirect, url_for, request
 app = Flask(__name__)
 
-def personasAppend(bigList,key,list):
-  bigList.append(dict(zip(key,list)))
-  return None
+import start_db
 
-keys = ['name','arcana','startinglevel','inherits','reflects','absorbs','blocks','resists','weak','img']
-
-izanagi = ['Izanagi','Fool','1','Electric','-','-','Dark','Electric','Wind','img/Izanagi.jpg']
-pixie = ['Pixie','Magician','2','Ice','-','-','-','Wind','Fire','img/Pixie.jpg']
-saki_mitama =['Saki Mitama','Priestess','11','Recovery','-','-','-','Ice','Wind','img/SakiMitama.png']
-senri = ['Senri','Empress','9','Recovery','-','-','Fire','-','Electric','img/Senri.jpg']
-oberon = ['Oberon','Emperor','12','Electric','-','-','Electric','Fire','Wind','img/Oberon.jpg']
-omoikane = ['Omoikane','Hierophant','7','Electric','-','-','-','Electric','Ice','img/Omoikane.jpg']
-queen_mab = ['Queen Mab','Lovers','25','Electric','-','-','Electric','-','Wind','img/Queen_mab.jpg']
-slime = ['Slime','Chariot','2','Physical','-','-','-','Physical','Fire','img/Slime.jpg']
-angel = ['Angel','Justice','4','Wind','-','-','-','Wind,Light','Dark','img/Angel.jpg']
-forneus = ['Fourneus','Hermit','6','Ice','-','-','Dark','Ice','Electric','img/Forneus.jpg']
-fortuna = ['Fortuna','Fortune','35','Wind','-','-','Fire,Wind','-','-','img/Fortuna.jpg']
-sandman =['Sandman','Strength','5','Wind','-','-','-','Wind','Electric','img/Sandman.jpg']
-berith = ['Berith','Hanged Man','15','Physical','-','-','Fire','-','Wind','img/Berith.jpg']
-ghoul = ['Ghoul','Death','9','Ailment','-','-','Ice','-','Fire,Light','img/Ghoul.jpg']
-apsaras =['Apsaras','Temperance','4','Recovery','-','-','-','-','Fire','img/Apsaras.jpg']
-
-
-personas = []
-personasAppend(personas,keys,izanagi)
-personasAppend(personas,keys,pixie)
-personasAppend(personas,keys,saki_mitama)
-personasAppend(personas,keys,senri)
-personasAppend(personas,keys,oberon)
-personasAppend(personas,keys,omoikane)
-personasAppend(personas,keys,queen_mab)
-personasAppend(personas,keys,slime)
-personasAppend(personas,keys,angel)
-personasAppend(personas,keys,forneus)
-personasAppend(personas,keys,fortuna)
-personasAppend(personas,keys,sandman)
-personasAppend(personas,keys,berith)
-personasAppend(personas,keys,ghoul)
-personasAppend(personas,keys,apsaras)
+personas = start_db.startDB()
 
 @app.route('/')
 def root():
@@ -64,13 +28,23 @@ def search():
     else:
       return render_template('search.html',results=results)
 
-@app.route('/persona/<chara>/')
-def persona(chara):
+@app.route('/persona/')
+def noPersona():
+  return redirect(url_for('List')),200
+
+@app.route('/persona/<name>')
+def persona(name):
   for p in personas:
-    if p['name'] == chara:
+    if p['name'] == name:
       print p['name']
-      return render_template('persona.html',p=p)
-  return "nope.jpg"
+      return render_template('persona.html',p=p),200
+    return render_template('404.html'),404
+
+
+
+@app.errorhandler(404)
+def page_not_found(error):
+  return render_template('404.html'), 404
 
 if __name__ == "__main__":
   app.run(host='0.0.0.0', debug=True)

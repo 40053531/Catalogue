@@ -1,0 +1,52 @@
+The app that i have created is a Small website that lists or searches for
+Personas (aka the summonable creatures from Shin Magami Tensei's Persona) in
+particular, the personas form Persona 4
+
+The design of the web-app is made so that is would be easy to Move around the
+app to allow for any user that wishes to use it get around. the main extentsion
+of the url are /Persona/<name>, /Search/ and /List/.
+
+/Persona/<name>/
+When <name> refers to the name of a persona then it will show the information
+of said persona that is stored on the site
+If <name> does not refer to a persona then it returns the 404 page error
+if <name> is empty then it redirects to the List page
+
+/Search/
+when there are no arguments the app offers the user to serch for a persona
+If there is a ?q= argument then the app will search for the persona and ether
+return with ether the Failed search page or a list of persona that include the
+search term
+
+/List/
+This just list all the persona with images for the personas to help with
+identification
+
+If the site 404 errors then the user is shown the 404 error page with offers
+an extra link to get back to the home page
+
+I Believe that, given that i did not give myself a lot of time to complete this
+website that i have completed this site to nearly the best that i could have
+produced in this time. I would have liked to include a file reading function
+that would allow me to read in all the personas from a txt file but I opted for
+directly imputing them into a List of dicts for the site to access. The site
+could have a better home page that maybe shows off a persona on the home page
+to make the home page more welcoming. on top of this have a better search
+ultiliy inorder to search for arcana or the personas starting lvl would improve
+the user experence
+
+One of the main challenges that i faced was creating a way to get the personas
+into the app in a way that would also allow me to easily assess it to search or
+list off what is in it. Thanks to this I did learn how to use Python Dicts as
+well as how to use multipul lists to zip together to create a Dict and create a
+List of Dicts. Past this it was learning about how to use Bootstrap to improve
+the look of the web-app.
+
+Resources I used
+The Persona4 wikidot to get a complete list of Personas (though i did not
+implement all the personas on the list
+The Megami Tensei Wikia for images and fact checking
+LearnPythonTheHardWay for Learning about how Dicts work.
+getBootstrap for Learning some of how to use bootstrap
+The Notes & Workbook provided Via moodle for getting started with the whole
+program
