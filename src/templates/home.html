@@ -4,10 +4,16 @@
     <h1 class="welcome">Welcome to the Persona Database</h1>
     <p class="welcome_body">Here you will find the personas from the game 'Shin Megami Tensei: Persona 4' along with information about the skill and atributes that they hold </p>
   </div>
-  <div class="container col-mid-6" style="background:#f5f5f5">
+  <div class="container col-md-6 " style="background:#f5f5f5">
     <h5> Random Persona</h5>
-    <div class="container">
-      <h3>{{p["name"]}}</h3>
+    <div class="pull-left">
+      <a href="persona/{{p['name']}}"><h3>{{p["name"]}}</h3></a>
+      <p>Arcana: {{p["arcana"]}}</p>
     </div>
+    <a class="thumbnail pull-right" href="persona/{{p['name']}}">
+      <div class="random_persona">
+        <img src={{url_for("static",filename=p["img"])}} class="home_img"></img>
+      </div>
+    </a>
   </div>
 {% endblock %}
