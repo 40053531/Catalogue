@@ -9,6 +9,16 @@
     <div class="pull-left">
       <a href="persona/{{p['name']}}"><h3>{{p["name"]}}</h3></a>
       <p>Arcana: {{p["arcana"]}}</p>
+      {% if p["resists"] == '-' %}
+        <p>Resists: Nothing</p>
+      {% else %}
+        <p>Resists: {{p["resists"]}}</p>
+      {% endif %}
+      {% if p["weak"] == '-' %}
+        <p>Weakness: None</p>
+      {% else %}
+        <p>Weakness: {{p["weak"]}}</p>
+      {% endif %}
     </div>
     <a class="thumbnail pull-right" href="persona/{{p['name']}}">
       <div class="random_persona">
