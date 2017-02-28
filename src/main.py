@@ -1,13 +1,15 @@
 from flask import Flask, render_template, redirect, url_for, request
 app = Flask(__name__)
 
-import start_db
+import start_db, random
 
 personas = start_db.startDB()
 
 @app.route('/')
 def root():
-  return render_template('home.html'), 200
+  p=random.choice(personas)
+  print(p['name'])
+  return render_template('home.html',p=p), 200
 
 @app.route('/list/')
 def list():
@@ -38,7 +40,7 @@ def persona(name):
     if p['name'] == name:
       print p['name']
       return render_template('persona.html',p=p),200
-    return render_template('404.html'),404
+  return render_template('404.html'),404
 
 
 

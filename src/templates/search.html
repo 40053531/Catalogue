@@ -2,15 +2,16 @@
 {% block content %}
   <h2>Search Results:</h2>
   {% for result in results %}
-    <div class="container" style="background-color:#f5f5f5">
-      
-        <img src={{url_for('static',filename=result["img"])}} height="300"
-          width=auto class="thumbnail pull-right" ></img>
-        <div class="pull-left">
-        <h3>{{result['name']}}</h3>
-        <p>Arcana: {{result['arcana']}}</p>
+    <a href="/persona/{{result['name']}}">
+      <div class="container" style="background-color:#f5f5f5">      
+          <img src={{url_for('static',filename=result["img"])}} height="300"
+            width=auto class="thumbnail pull-right" ></img>
+          <div class="pull-left">
+            <h3>{{result['name']}}</h3>
+            <p>Arcana: {{result['arcana']}}</p>
+          </div>
       </div>
-    </div>
+    </a>
     <br>
   {% endfor %}
 {% endblock %}

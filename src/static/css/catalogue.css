@@ -1,0 +1,25 @@
+@media (min-width: 767px){
+  .persona{
+    position: relative;
+    left: 40%;
+  }
+  .card{
+    position: relative;
+    right: 60%;
+    height: 50px;
+    width: auto;
+  }
+}
+@media (max-width: 767px){
+  .card{
+    display: none;
+    height: 50px;
+    width auto;
+  }
+}
+.welcome{
+  font-family: 'Belleza', san-serif;
+}
+.welcome_body{
+  font-family: san-serif;
+}
