@@ -25,6 +25,12 @@ identification
 If the site 404 errors then the user is shown the 404 error page with offers
 an extra link to get back to the home page
 
+If given more time i would of liked to add a way to log-in which would allow 
+the user to save their favorite personas for future reference. As well as this
+I would of liked to expand the total data that is available for each persona as
+well as more persona from the game so that there is more potential information
+for the user to assess.
+
 I Believe that, given that i did not give myself a lot of time to complete this
 website that i have completed this site to nearly the best that i could have
 produced in this time. I would have liked to include a file reading function
