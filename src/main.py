@@ -28,7 +28,7 @@ def search():
     if results == []:
       return render_template('noSearch.html',search_term=search_term)
     else:
-      return render_template('search.html',results=results)
+      return render_template('search.html',results=results,search_term=search_term)
 
 @app.route('/persona/')
 def noPersona():
